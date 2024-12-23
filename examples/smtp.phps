@@ -12,7 +12,9 @@ use PHPMailer\PHPMailer\SMTP;
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
 
-require '../vendor/autoload.php';
+require_once('PHPMailer.php');
+require_once('SMTP.php');
+require_once('Exception.php');
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
@@ -24,15 +26,15 @@ $mail->isSMTP();
 //SMTP::DEBUG_SERVER = client and server messages
 $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 //Set the hostname of the mail server
-$mail->Host = 'mail.example.com';
+$mail->Host = 'smtp.mail.ru';
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 25;
+$mail->Port = 465;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = 'yourname@example.com';
+$mail->Username = 'jojowanno1947@mail.com';
 //Password to use for SMTP authentication
-$mail->Password = 'yourpassword';
+$mail->Password = 'Gradus1947';
 //Set who the message is to be sent from
 $mail->setFrom('from@example.com', 'First Last');
 //Set an alternative reply-to address
